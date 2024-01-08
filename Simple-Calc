@@ -1,16 +1,59 @@
-import java.util.Scanner;
+#include <iostream>
+#include <math.h>
+using namespace std;
 
-class Main{
-  public static void main(String[]args){
-    Scanner sc = new Scanner(System.in);
+int main() {
 
-    double num1, num2, result;
-    num1 = sc.nextDouble();
-    num2 = sc.nextDouble();
+	int num1 = 0, num2 = 0, result = 0;
+	char sym;
 
-    result = num1 + num2;
-    system.out.println(result);
+	do {
+		cout << "Enter number: ";
+		do {
+			cin >> num1;
+			if (num1 == 000) {
+				return 0;
+			}
+		} while (num1 == int());
 
-    return 0;
-  }
+
+		cout << "\n*\t /\n";
+		cout << "+\t -\n";
+
+		cout << "Enter Operation: ";
+		do {
+			cin >> sym;
+		} while (!(sym == '*') && !(sym == '+') && !(sym == '-') && !(sym == '/'));
+
+
+		cout << "\nEnter Second Number: ";
+		do {
+			cin >> num2;
+		} while (num2 == int());
+
+
+		switch (sym) {
+		case('*'):
+			result = num1 * num2;
+			break;
+		case('/'):
+			result = num1 / num2;
+			break;
+		case('+'):
+			result = num1 + num2;
+			break;
+		case('-'):
+			result = num1 - num2;
+			break;
+		default:
+			cout << "Operation not Found\n";
+			break;
+		}
+
+		cout << "Result: " << result << "\n\n";
+		cout << "\t\t(Enter 000 to end program)\n";
+
+	} while ( !(num1 == 000) );
+
+	return 0;
 }
